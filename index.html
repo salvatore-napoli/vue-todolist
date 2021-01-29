@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<link rel="stylesheet" href="css/style.css">
+		<title>To Do List</title>
+	</head>
+	<body>
+		<div id="page-container">
+			<input type="text" name="element-to-push" placeholder="Scrivi qualcosa..." v-model="message" v-on:keyup.enter="pushInput">
+			<button type="button" name="submit" @click="pushInput">Submit</button>
+
+			<ul v-for="element in inputElements">
+				<li>{{element}}</li>
+			</ul>
+		</div>
+
+		<script src="js/script.js" charset="utf-8"></script>
+	</body>
+</html>
