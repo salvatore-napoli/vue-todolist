@@ -23,7 +23,9 @@
 				</div>
 
 				<ul class="notes">
-					<li class="note" v-for="element in inputElements"><span>{{element}}</span> <i class="fas fa-times"></i></li>
+					<li class="note" v-for="(element, noteIndex) in inputElements">
+						<span>{{element}}</span> <i class="fas fa-times" @click="deleteNote(noteIndex)"></i>
+					</li>
 				</ul>
 			</main>
 		</div>
