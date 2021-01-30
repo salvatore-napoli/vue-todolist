@@ -12,6 +12,7 @@ new Vue ({
 	methods: {
 		pushInput: function () {
 			this.inputElements.push(this.message);
+			this.message = '';
 		}
 	}
 });

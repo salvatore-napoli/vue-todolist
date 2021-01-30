@@ -4,16 +4,28 @@
 		<meta charset="utf-8">
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 		<title>To Do List</title>
 	</head>
 	<body>
 		<div id="page-container">
-			<input type="text" name="element-to-push" placeholder="Scrivi qualcosa..." v-model="message" v-on:keyup.enter="pushInput">
-			<button type="button" name="submit" @click="pushInput">Submit</button>
+			<header>
+				<div class="logo">
+					<img src="img/logo.png" alt="logo">
+				</div>
+			</header>
+			<main>
+				<div class="create-note">
+					<input type="text" class="note-text" name="note-to-push" placeholder="Nuovo Todo" v-model="message" v-on:keyup.enter="pushInput">
+					<button type="button" class="submit-note" name="submit" @click="pushInput">Aggiungi</button>
+				</div>
 
-			<ul v-for="element in inputElements">
-				<li>{{element}}</li>
-			</ul>
+				<ul class="notes">
+					<li class="note" v-for="element in inputElements"><span>{{element}}</span> <i class="fas fa-times"></i></li>
+				</ul>
+			</main>
 		</div>
 
 		<script src="js/script.js" charset="utf-8"></script>
